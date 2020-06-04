@@ -13,6 +13,9 @@
 		1F27206C2488BBB000B87181 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F27206A2488BBB000B87181 /* Main.storyboard */; };
 		1F27206E2488BBB200B87181 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F27206D2488BBB200B87181 /* Assets.xcassets */; };
 		1F2720712488BBB200B87181 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F27206F2488BBB200B87181 /* LaunchScreen.storyboard */; };
+		1F2720792488C2C000B87181 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2720782488C2C000B87181 /* HomeViewController.swift */; };
+		1F27207B2488C2CB00B87181 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F27207A2488C2CB00B87181 /* ScheduleViewController.swift */; };
+		1F27207D2488C2F200B87181 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F27207C2488C2F200B87181 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		1F27206D2488BBB200B87181 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F2720702488BBB200B87181 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F2720722488BBB200B87181 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F2720782488C2C000B87181 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1F27207A2488C2CB00B87181 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		1F27207C2488C2F200B87181 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,9 @@
 				1F27206D2488BBB200B87181 /* Assets.xcassets */,
 				1F27206F2488BBB200B87181 /* LaunchScreen.storyboard */,
 				1F2720722488BBB200B87181 /* Info.plist */,
+				1F2720782488C2C000B87181 /* HomeViewController.swift */,
+				1F27207A2488C2CB00B87181 /* ScheduleViewController.swift */,
+				1F27207C2488C2F200B87181 /* SettingsViewController.swift */,
 			);
 			path = SmartHome;
 			sourceTree = "<group>";
@@ -138,9 +147,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F27207B2488C2CB00B87181 /* ScheduleViewController.swift in Sources */,
 				1F2720692488BBB000B87181 /* ViewController.swift in Sources */,
 				1F2720652488BBB000B87181 /* AppDelegate.swift in Sources */,
 				1F2720672488BBB000B87181 /* SceneDelegate.swift in Sources */,
+				1F2720792488C2C000B87181 /* HomeViewController.swift in Sources */,
+				1F27207D2488C2F200B87181 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
