@@ -16,6 +16,7 @@
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <connections>
                         <segue destination="JIq-jc-ftQ" kind="relationship" relationship="rootViewController" id="yJH-pb-WpM"/>
@@ -42,11 +43,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ACR-F2-a5I">
+                                <rect key="frame" x="0.0" y="138" width="375" height="591"/>
+                                <color key="backgroundColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="mXL-Bh-U8n" firstAttribute="trailing" secondItem="iRm-wG-lxp" secondAttribute="trailing" id="4hd-3l-XyL"/>
+                            <constraint firstItem="ACR-F2-a5I" firstAttribute="leading" secondItem="mXL-Bh-U8n" secondAttribute="leading" id="MKq-Qf-bmk"/>
                             <constraint firstItem="iRm-wG-lxp" firstAttribute="top" secondItem="mXL-Bh-U8n" secondAttribute="top" id="Umb-hr-YIH"/>
+                            <constraint firstItem="ACR-F2-a5I" firstAttribute="trailing" secondItem="mXL-Bh-U8n" secondAttribute="trailing" id="eu3-iM-vVZ"/>
+                            <constraint firstItem="mXL-Bh-U8n" firstAttribute="bottom" secondItem="ACR-F2-a5I" secondAttribute="bottom" id="evT-A5-6W5"/>
+                            <constraint firstItem="ACR-F2-a5I" firstAttribute="top" secondItem="iRm-wG-lxp" secondAttribute="bottom" id="m4j-RP-xXT"/>
                             <constraint firstItem="iRm-wG-lxp" firstAttribute="leading" secondItem="mXL-Bh-U8n" secondAttribute="leading" constant="30" id="vFi-Y9-vdR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mXL-Bh-U8n"/>
@@ -54,30 +63,155 @@
                     <navigationItem key="navigationItem" id="649-ck-twM">
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="BXc-gh-YB7">
                             <connections>
-                                <segue destination="dcx-VS-LVs" kind="show" id="mdH-20-GuE"/>
+                                <segue destination="dcx-VS-LVs" kind="show" identifier="ScheduleAdd" id="mdH-20-GuE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="ACR-F2-a5I" id="nMV-cJ-cU2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4dU-uD-M6p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1207" y="536"/>
+            <point key="canvasLocation" x="-1100" y="535.71428571428578"/>
         </scene>
-        <!--View Controller-->
+        <!--Schedule Item View Controller-->
         <scene sceneID="API-PF-4TO">
             <objects>
-                <viewController id="dcx-VS-LVs" sceneMemberID="viewController">
+                <viewController id="dcx-VS-LVs" customClass="ScheduleItemViewController" customModule="SmartHome" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5v1-Dv-yZb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="요일 &amp; 시간 설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pct-pI-RUq">
+                                <rect key="frame" x="31" y="103" width="135" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="135" id="7NH-Yo-nVM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="DLh-6g-FJN">
+                                <rect key="frame" x="31" y="142" width="313" height="25"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxf-Ll-c6o">
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                        <state key="normal" image="mon"/>
+                                        <state key="selected" image="mon_selected"/>
+                                        <connections>
+                                            <action selector="touchWeek:" destination="dcx-VS-LVs" eventType="touchUpInside" id="vKR-cD-R0f"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Im5-eH-ELN">
+                                        <rect key="frame" x="48" y="0.0" width="25" height="25"/>
+                                        <state key="normal" image="tue"/>
+                                        <state key="selected" image="tue_selected"/>
+                                        <connections>
+                                            <action selector="touchWeek:" destination="dcx-VS-LVs" eventType="touchUpInside" id="FIV-wm-kI9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sns-pX-t57">
+                                        <rect key="frame" x="96" y="0.0" width="25" height="25"/>
+                                        <state key="normal" image="wed"/>
+                                        <state key="selected" image="wed_selected"/>
+                                        <connections>
+                                            <action selector="touchWeek:" destination="dcx-VS-LVs" eventType="touchUpInside" id="zpH-eG-XC7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iw5-8R-qhB">
+                                        <rect key="frame" x="144" y="0.0" width="25" height="25"/>
+                                        <state key="normal" image="thur"/>
+                                        <state key="selected" image="thur_selected"/>
+                                        <connections>
+                                            <action selector="touchWeek:" destination="dcx-VS-LVs" eventType="touchUpInside" id="13a-dq-lTc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnk-8r-4FL">
+                                        <rect key="frame" x="192" y="0.0" width="25" height="25"/>
+                                        <state key="normal" image="fri"/>
+                                        <state key="selected" image="fri_selected"/>
+                                        <connections>
+                                            <action selector="touchWeek:" destination="dcx-VS-LVs" eventType="touchUpInside" id="cbn-7Q-pbg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYs-bt-qR8">
+                                        <rect key="frame" x="240" y="0.0" width="25" height="25"/>
+                                        <state key="normal" image="sat"/>
+                                        <state key="selected" image="sat_selected"/>
+                                        <connections>
+                                            <action selector="touchWeek:" destination="dcx-VS-LVs" eventType="touchUpInside" id="nlo-cN-KNp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWG-JH-vgt">
+                                        <rect key="frame" x="288" y="0.0" width="25" height="25"/>
+                                        <state key="normal" image="sun"/>
+                                        <state key="selected" image="sun_selected"/>
+                                        <connections>
+                                            <action selector="touchWeek:" destination="dcx-VS-LVs" eventType="touchUpInside" id="TYs-IL-psT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="313" id="i0D-5e-rg1"/>
+                                </constraints>
+                            </stackView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="NSm-FV-7LK">
+                                <rect key="frame" x="27.666666666666657" y="192" width="320" height="216"/>
+                                <locale key="locale" localeIdentifier="ko_KR"/>
+                                <connections>
+                                    <action selector="changeDatePicker:" destination="dcx-VS-LVs" eventType="valueChanged" id="Nm8-F9-saY"/>
+                                </connections>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="디바이스 목록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBF-Yb-sAk">
+                                <rect key="frame" x="30.999999999999993" y="433" width="109.33333333333331" height="24"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9fs-X7-64F">
+                                <rect key="frame" x="27.666666666666657" y="482" width="320" height="216"/>
+                            </pickerView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Pct-pI-RUq" firstAttribute="top" secondItem="Yop-X2-PTl" secondAttribute="top" constant="15" id="3jG-dM-KHp"/>
+                            <constraint firstItem="Pct-pI-RUq" firstAttribute="leading" secondItem="Yop-X2-PTl" secondAttribute="leading" constant="31" id="7Ix-Zw-WwJ"/>
+                            <constraint firstItem="9fs-X7-64F" firstAttribute="top" secondItem="mBF-Yb-sAk" secondAttribute="bottom" constant="25" id="B6o-ai-bi8"/>
+                            <constraint firstItem="mBF-Yb-sAk" firstAttribute="leading" secondItem="Yop-X2-PTl" secondAttribute="leading" constant="31" id="QpH-Np-k2u"/>
+                            <constraint firstItem="NSm-FV-7LK" firstAttribute="centerX" secondItem="5v1-Dv-yZb" secondAttribute="centerX" id="UQW-A9-LuI"/>
+                            <constraint firstItem="9fs-X7-64F" firstAttribute="centerX" secondItem="5v1-Dv-yZb" secondAttribute="centerX" id="dY4-VM-oLa"/>
+                            <constraint firstItem="DLh-6g-FJN" firstAttribute="top" secondItem="Pct-pI-RUq" secondAttribute="bottom" constant="15" id="dlg-nr-oOM"/>
+                            <constraint firstItem="NSm-FV-7LK" firstAttribute="centerX" secondItem="5v1-Dv-yZb" secondAttribute="centerX" id="f0r-wA-wrn"/>
+                            <constraint firstItem="DLh-6g-FJN" firstAttribute="centerX" secondItem="5v1-Dv-yZb" secondAttribute="centerX" id="qAy-5J-5OL"/>
+                            <constraint firstItem="NSm-FV-7LK" firstAttribute="top" secondItem="DLh-6g-FJN" secondAttribute="bottom" constant="25" id="rn7-QE-vQi"/>
+                            <constraint firstItem="Yop-X2-PTl" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Pct-pI-RUq" secondAttribute="trailing" symbolic="YES" id="tzG-DW-pVu"/>
+                            <constraint firstItem="mBF-Yb-sAk" firstAttribute="top" secondItem="NSm-FV-7LK" secondAttribute="bottom" constant="25" id="vDX-Ic-guZ"/>
+                            <constraint firstItem="Yop-X2-PTl" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mBF-Yb-sAk" secondAttribute="trailing" symbolic="YES" id="x5z-Xl-Bjx"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Yop-X2-PTl"/>
                     </view>
-                    <navigationItem key="navigationItem" id="SqX-b5-JG0"/>
+                    <navigationItem key="navigationItem" id="SqX-b5-JG0">
+                        <barButtonItem key="rightBarButtonItem" title="완료" id="eeD-F3-HZH">
+                            <connections>
+                                <action selector="doneButton:" destination="dcx-VS-LVs" id="Xmp-30-hlz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="pickerView" destination="9fs-X7-64F" id="sC9-zn-A5s"/>
+                        <outletCollection property="weekButton" destination="lxf-Ll-c6o" collectionClass="NSMutableArray" id="O0h-Fj-1Yz"/>
+                        <outletCollection property="weekButton" destination="Im5-eH-ELN" collectionClass="NSMutableArray" id="J1g-bG-Vl5"/>
+                        <outletCollection property="weekButton" destination="sns-pX-t57" collectionClass="NSMutableArray" id="CYb-Ro-9bs"/>
+                        <outletCollection property="weekButton" destination="iw5-8R-qhB" collectionClass="NSMutableArray" id="rIT-hX-is0"/>
+                        <outletCollection property="weekButton" destination="pnk-8r-4FL" collectionClass="NSMutableArray" id="saX-WI-V4I"/>
+                        <outletCollection property="weekButton" destination="UYs-bt-qR8" collectionClass="NSMutableArray" id="TxY-GK-Rt5"/>
+                        <outletCollection property="weekButton" destination="qWG-JH-vgt" collectionClass="NSMutableArray" id="9je-ZN-VuN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gsz-XJ-oDi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-313" y="536"/>
+            <point key="canvasLocation" x="-314.39999999999998" y="535.71428571428578"/>
         </scene>
         <!--Graph-->
         <scene sceneID="Ds3-qi-cMJ">
@@ -278,7 +412,7 @@
                                                                 <state key="normal" image="air_low"/>
                                                                 <state key="selected" image="air_low_selected"/>
                                                                 <connections>
-                                                                    <action selector="airLowToggleBtn:" destination="KVI-fT-tHf" eventType="touchUpInside" id="iGZ-tJ-Xcf"/>
+                                                                    <action selector="touchAirButton:" destination="KVI-fT-tHf" eventType="touchUpInside" id="xsc-Ww-Ceq"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Tl-Kw-cST">
@@ -290,7 +424,7 @@
                                                                 <state key="normal" image="air_high"/>
                                                                 <state key="selected" image="air_high_selected"/>
                                                                 <connections>
-                                                                    <action selector="airHighToggleBtn:" destination="KVI-fT-tHf" eventType="touchUpInside" id="YCI-ss-YMO"/>
+                                                                    <action selector="touchAirButton:" destination="KVI-fT-tHf" eventType="touchUpInside" id="9yx-1C-GMZ"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -480,11 +614,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="Home" id="w1S-Qc-cG3"/>
                     <connections>
-                        <outlet property="airHighToggleBtn" destination="2Tl-Kw-cST" id="cas-jS-Mni"/>
-                        <outlet property="airLowToggleBtn" destination="hLq-is-c19" id="n2d-X3-o3W"/>
                         <outlet property="airSwitch" destination="VC4-hK-Vql" id="CBu-vb-hyE"/>
                         <outlet property="bedSwitch" destination="EJO-5L-gP6" id="fI8-x5-07s"/>
                         <outlet property="roomSwitch" destination="xdU-Nd-HFj" id="r4Z-Bi-js0"/>
+                        <outletCollection property="airButton" destination="hLq-is-c19" collectionClass="NSMutableArray" id="AVX-gg-fQt"/>
+                        <outletCollection property="airButton" destination="2Tl-Kw-cST" collectionClass="NSMutableArray" id="XYw-iS-TBx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0o3-3C-D7b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -522,14 +656,28 @@
         <image name="air_low" width="25" height="25"/>
         <image name="air_low_selected" width="25" height="25"/>
         <image name="doorlock_icon" width="30" height="30"/>
+        <image name="fri" width="25" height="25"/>
+        <image name="fri_selected" width="25" height="25"/>
         <image name="graph" width="29" height="29"/>
         <image name="humidity" width="29" height="29"/>
         <image name="largeRectangle" width="338" height="148"/>
+        <image name="mon" width="25" height="25"/>
+        <image name="mon_selected" width="25" height="25"/>
         <image name="openbtn" width="40" height="18"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="sampleimg" width="127" height="60"/>
+        <image name="sat" width="25" height="25"/>
+        <image name="sat_selected" width="25" height="25"/>
         <image name="smallrectangle" width="338" height="58"/>
+        <image name="sun" width="25" height="25"/>
+        <image name="sun_selected" width="25" height="25"/>
         <image name="switch_icon" width="30" height="30"/>
         <image name="themperture" width="29" height="29"/>
+        <image name="thur" width="25" height="25"/>
+        <image name="thur_selected" width="25" height="25"/>
+        <image name="tue" width="25" height="25"/>
+        <image name="tue_selected" width="25" height="25"/>
+        <image name="wed" width="25" height="25"/>
+        <image name="wed_selected" width="25" height="25"/>
     </resources>
 </document>

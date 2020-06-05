@@ -16,6 +16,10 @@
 		1F2720792488C2C000B87181 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2720782488C2C000B87181 /* HomeViewController.swift */; };
 		1F27207B2488C2CB00B87181 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F27207A2488C2CB00B87181 /* ScheduleViewController.swift */; };
 		1F27207D2488C2F200B87181 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F27207C2488C2F200B87181 /* SettingsViewController.swift */; };
+		1FBA4BDE2489E07D00FBF9CD /* ScheduleItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA4BDD2489E07D00FBF9CD /* ScheduleItemViewController.swift */; };
+		1FBA4BE5248A1AAE00FBF9CD /* ScheduleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA4BE4248A1AAE00FBF9CD /* ScheduleItem.swift */; };
+		1FBA4BE8248A1DD100FBF9CD /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBA4BE6248A1DD100FBF9CD /* ScheduleTableViewCell.swift */; };
+		1FBA4BE9248A1DD100FBF9CD /* ScheduleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FBA4BE7248A1DD100FBF9CD /* ScheduleTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		1F2720782488C2C000B87181 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1F27207A2488C2CB00B87181 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		1F27207C2488C2F200B87181 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		1FBA4BDD2489E07D00FBF9CD /* ScheduleItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleItemViewController.swift; sourceTree = "<group>"; };
+		1FBA4BE4248A1AAE00FBF9CD /* ScheduleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleItem.swift; sourceTree = "<group>"; };
+		1FBA4BE6248A1DD100FBF9CD /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		1FBA4BE7248A1DD100FBF9CD /* ScheduleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,18 +70,62 @@
 		1F2720632488BBB000B87181 /* SmartHome */ = {
 			isa = PBXGroup;
 			children = (
-				1F2720642488BBB000B87181 /* AppDelegate.swift */,
-				1F2720662488BBB000B87181 /* SceneDelegate.swift */,
 				1F2720682488BBB000B87181 /* ViewController.swift */,
 				1F27206A2488BBB000B87181 /* Main.storyboard */,
 				1F27206D2488BBB200B87181 /* Assets.xcassets */,
-				1F27206F2488BBB200B87181 /* LaunchScreen.storyboard */,
 				1F2720722488BBB200B87181 /* Info.plist */,
-				1F2720782488C2C000B87181 /* HomeViewController.swift */,
-				1F27207A2488C2CB00B87181 /* ScheduleViewController.swift */,
-				1F27207C2488C2F200B87181 /* SettingsViewController.swift */,
+				1FBA4BDF2489E19200FBF9CD /* Home */,
+				1FBA4BE02489E19800FBF9CD /* Schedule */,
+				1FBA4BE12489E1A200FBF9CD /* Graph */,
+				1FBA4BE22489E1A800FBF9CD /* Settings */,
+				1FBA4BE32489E1FD00FBF9CD /* Supporting Files */,
 			);
 			path = SmartHome;
+			sourceTree = "<group>";
+		};
+		1FBA4BDF2489E19200FBF9CD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1F2720782488C2C000B87181 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		1FBA4BE02489E19800FBF9CD /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				1F27207A2488C2CB00B87181 /* ScheduleViewController.swift */,
+				1FBA4BDD2489E07D00FBF9CD /* ScheduleItemViewController.swift */,
+				1FBA4BE4248A1AAE00FBF9CD /* ScheduleItem.swift */,
+				1FBA4BE6248A1DD100FBF9CD /* ScheduleTableViewCell.swift */,
+				1FBA4BE7248A1DD100FBF9CD /* ScheduleTableViewCell.xib */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		1FBA4BE12489E1A200FBF9CD /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Graph;
+			sourceTree = "<group>";
+		};
+		1FBA4BE22489E1A800FBF9CD /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				1F27207C2488C2F200B87181 /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		1FBA4BE32489E1FD00FBF9CD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1F2720642488BBB000B87181 /* AppDelegate.swift */,
+				1F2720662488BBB000B87181 /* SceneDelegate.swift */,
+				1F27206F2488BBB200B87181 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +188,7 @@
 			files = (
 				1F2720712488BBB200B87181 /* LaunchScreen.storyboard in Resources */,
 				1F27206E2488BBB200B87181 /* Assets.xcassets in Resources */,
+				1FBA4BE9248A1DD100FBF9CD /* ScheduleTableViewCell.xib in Resources */,
 				1F27206C2488BBB000B87181 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,11 +201,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F27207B2488C2CB00B87181 /* ScheduleViewController.swift in Sources */,
+				1FBA4BE5248A1AAE00FBF9CD /* ScheduleItem.swift in Sources */,
 				1F2720692488BBB000B87181 /* ViewController.swift in Sources */,
 				1F2720652488BBB000B87181 /* AppDelegate.swift in Sources */,
 				1F2720672488BBB000B87181 /* SceneDelegate.swift in Sources */,
+				1FBA4BDE2489E07D00FBF9CD /* ScheduleItemViewController.swift in Sources */,
 				1F2720792488C2C000B87181 /* HomeViewController.swift in Sources */,
 				1F27207D2488C2F200B87181 /* SettingsViewController.swift in Sources */,
+				1FBA4BE8248A1DD100FBF9CD /* ScheduleTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
