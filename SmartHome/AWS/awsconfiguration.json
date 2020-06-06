@@ -1,0 +1,17 @@
+{
+    "Version": "1.0",
+    "IdentityManager": {
+        "Default": {}
+    },
+    "CredentialsProvider": {
+        "CognitoIdentity": {
+            "Default": {
+                "PoolId": "ap-northeast-2:3559ba65-31e9-4a92-b38a-aed42ce5df37",
+                "Region": "AP_NORTHEAST_2"
+            }
+        }
+    }
+}
+
+
+

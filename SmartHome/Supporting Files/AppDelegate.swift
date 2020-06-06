@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import AWSCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // AWS setting
+        AWSDDLog.sharedInstance.logLevel = .debug
+        AWSDDLog.add(AWSDDTTYLogger.sharedInstance)
+        
         return true
     }
 

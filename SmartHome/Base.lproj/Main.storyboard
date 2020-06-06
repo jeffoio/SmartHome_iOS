@@ -616,7 +616,9 @@
                     <connections>
                         <outlet property="airSwitch" destination="VC4-hK-Vql" id="CBu-vb-hyE"/>
                         <outlet property="bedSwitch" destination="EJO-5L-gP6" id="fI8-x5-07s"/>
+                        <outlet property="humidtyLabel" destination="qLW-Q2-h3h" id="8dH-H2-CnS"/>
                         <outlet property="roomSwitch" destination="xdU-Nd-HFj" id="r4Z-Bi-js0"/>
+                        <outlet property="tempertureLabel" destination="BYF-p8-uqR" id="nTl-Nk-eH3"/>
                         <outletCollection property="airButton" destination="hLq-is-c19" collectionClass="NSMutableArray" id="AVX-gg-fQt"/>
                         <outletCollection property="airButton" destination="2Tl-Kw-cST" collectionClass="NSMutableArray" id="XYw-iS-TBx"/>
                     </connections>
