@@ -11,12 +11,18 @@ PODS:
   - AWSMobileClient (2.13.4):
     - AWSAuthCore (= 2.13.4)
     - AWSCognitoIdentityProvider (= 2.13.4)
+  - Charts (3.5.0):
+    - Charts/Core (= 3.5.0)
+  - Charts/Core (3.5.0)
   - SwiftyJSON (4.3.0)
+  - TinyConstraints (4.0.1)
 
 DEPENDENCIES:
   - AWSIoT
   - AWSMobileClient
+  - Charts
   - SwiftyJSON (~> 4.0)
+  - TinyConstraints
 
 SPEC REPOS:
   trunk:
@@ -26,7 +32,9 @@ SPEC REPOS:
     - AWSCore
     - AWSIoT
     - AWSMobileClient
+    - Charts
     - SwiftyJSON
+    - TinyConstraints
 
 SPEC CHECKSUMS:
   AWSAuthCore: 72b4bd064c28985ea5345c62759632d511de342a
@@ -35,8 +43,10 @@ SPEC CHECKSUMS:
   AWSCore: 06beea22b6bdbfe9f5ab5015c6901e8475c746a8
   AWSIoT: d63cd08d0702627a0e9a66cb02c7f273784c0730
   AWSMobileClient: 33ecce524fbc011d543dae8306ca29a43ecb72e5
+  Charts: 40a08591df1f8ad5c223ddedfb1a06da92f24f7c
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+  TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
 
-PODFILE CHECKSUM: be14d4f266834ce28e8dd9a7374ed1d91870c9d7
+PODFILE CHECKSUM: 8efd57842c635c676e6303d2dd8dd817ca9bb9d2
 
 COCOAPODS: 1.9.1

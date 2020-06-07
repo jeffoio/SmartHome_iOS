@@ -24,6 +24,7 @@
 		1FC1597A248A3819004E80FD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC15979248A3819004E80FD /* Constants.swift */; };
 		1FC1599E248A90D0004E80FD /* AwsJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC1599D248A90D0004E80FD /* AwsJson.swift */; };
 		1FC159A0248B2A30004E80FD /* AwsIotConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC1599F248B2A30004E80FD /* AwsIotConnect.swift */; };
+		1FCD9067248D224D003244FE /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCD9066248D224D003244FE /* GraphViewController.swift */; };
 		CFA3C88C404347A6F3A938B1 /* Pods_SmartHome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAED58C896D9162DE908568 /* Pods_SmartHome.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		1FC15979248A3819004E80FD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1FC1599D248A90D0004E80FD /* AwsJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwsJson.swift; sourceTree = "<group>"; };
 		1FC1599F248B2A30004E80FD /* AwsIotConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwsIotConnect.swift; sourceTree = "<group>"; };
+		1FCD9066248D224D003244FE /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		CEAED58C896D9162DE908568 /* Pods_SmartHome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartHome.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF97E262D8339BF8AE1B5FE5 /* Pods-SmartHome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHome.debug.xcconfig"; path = "Target Support Files/Pods-SmartHome/Pods-SmartHome.debug.xcconfig"; sourceTree = "<group>"; };
 		D9E3AE5A7BF668DDB7731F39 /* Pods-SmartHome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHome.release.xcconfig"; path = "Target Support Files/Pods-SmartHome/Pods-SmartHome.release.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 		1FBA4BE12489E1A200FBF9CD /* Graph */ = {
 			isa = PBXGroup;
 			children = (
+				1FCD9066248D224D003244FE /* GraphViewController.swift */,
 			);
 			path = Graph;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				1F2720652488BBB000B87181 /* AppDelegate.swift in Sources */,
 				1F2720672488BBB000B87181 /* SceneDelegate.swift in Sources */,
 				1FC1597A248A3819004E80FD /* Constants.swift in Sources */,
+				1FCD9067248D224D003244FE /* GraphViewController.swift in Sources */,
 				1FC159A0248B2A30004E80FD /* AwsIotConnect.swift in Sources */,
 				1FBA4BDE2489E07D00FBF9CD /* ScheduleItemViewController.swift in Sources */,
 				1F2720792488C2C000B87181 /* HomeViewController.swift in Sources */,

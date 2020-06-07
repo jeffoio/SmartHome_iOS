@@ -7,6 +7,8 @@ target 'SmartHome' do
   pod 'AWSMobileClient'
   pod 'AWSIoT'
   pod 'SwiftyJSON', '~> 4.0'
+  pod 'Charts'
+  pod "TinyConstraints"
   # Pods for SmartHome
 
 end

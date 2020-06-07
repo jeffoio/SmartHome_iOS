@@ -9,6 +9,8 @@
 import UIKit
 import SwiftyJSON
 import AWSIoT
+import UserNotifications
+
 
 class HomeViewController: UIViewController {
     
@@ -30,8 +32,13 @@ class HomeViewController: UIViewController {
         roomSwitch.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
         bedSwitch.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
         
-        //Aws connect
+        // Aws connect
         awsiot.awsConnect()
+        
+        // Notificaton permission
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (result, Error) in
+            print(result)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,7 +48,22 @@ class HomeViewController: UIViewController {
     // Make toggle Button`
     @IBAction func touchAirButton(_ sender: UIButton) {
         sender.isSelected.toggle()
+        
     }
+    
+    @IBAction func doorOpenBtn(_ sender: UIButton) {
+        
+        let content = UNMutableNotificationContent()
+        content.title = "알림"
+        content.body = "손님이 왔습니다"
+        content.badge = 1
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
+        // Request Notification
+        let request = UNNotificationRequest(identifier: "test", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
+    
     
     
     // Subscribe temp & humidity
@@ -51,14 +73,34 @@ class HomeViewController: UIViewController {
             // Handle message event here...
             let temp = payloadDictionary["state"]["reported"]["temperature"].string
             let hum = payloadDictionary["state"]["reported"]["humidity"].string
+            let visit = payloadDictionary["state"]["reported"]["switch"].string
+            print(payloadDictionary)
             DispatchQueue.main.async {
                 do {
-                    self.tempertureLabel.text = "현재 온도 \(temp ?? "30.0")  ˚"
-                    self.humidtyLabel.text = "현재 습도 \(hum ?? "35%" )%"
+                    self.tempertureLabel.text = "현재 온도 \(temp ?? "30.0") ˚"
+                    self.humidtyLabel.text = "현재 습도 \(hum ?? "35" )%"
+                    
                 } catch {
                     print("Error, failed to connect to device gateway => \(error)")
                 }
             }
+            
+            print(visit)
+            if let visit = visit {
+                // visitor come
+                if visit == "ON" {
+                    let content = UNMutableNotificationContent()
+                    content.title = "알림"
+                    content.body = "손님이 왔습니다"
+                    content.badge = 1
+                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
+                    // Request Notification
+                    let request = UNNotificationRequest(identifier: "test", content: content, trigger: trigger)
+                    UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+                    
+                }
+            }
+            
             
             
         }

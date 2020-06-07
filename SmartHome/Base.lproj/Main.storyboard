@@ -216,7 +216,7 @@
         <!--Graph-->
         <scene sceneID="Ds3-qi-cMJ">
             <objects>
-                <viewController id="JAO-fU-PkF" sceneMemberID="viewController">
+                <viewController id="JAO-fU-PkF" customClass="GraphViewController" customModule="SmartHome" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j4U-yM-VGn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -237,14 +237,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gT2-0d-PQh">
+                                <rect key="frame" x="0.0" y="138" width="375" height="591"/>
+                                <color key="backgroundColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Ws6-Qe-79Q" firstAttribute="trailing" secondItem="gT2-0d-PQh" secondAttribute="trailing" id="0Qq-7g-Fv2"/>
                             <constraint firstItem="Qzr-NS-n9n" firstAttribute="trailing" secondItem="Ws6-Qe-79Q" secondAttribute="trailing" id="8uD-3b-lk9"/>
+                            <constraint firstItem="gT2-0d-PQh" firstAttribute="top" secondItem="Qzr-NS-n9n" secondAttribute="bottom" id="If2-6w-Me7"/>
                             <constraint firstItem="WFU-vK-VBq" firstAttribute="trailing" secondItem="Ws6-Qe-79Q" secondAttribute="trailing" id="JuX-rv-cYC"/>
                             <constraint firstItem="WFU-vK-VBq" firstAttribute="top" secondItem="Ws6-Qe-79Q" secondAttribute="top" id="RpF-uz-ArK"/>
                             <constraint firstItem="Qzr-NS-n9n" firstAttribute="top" secondItem="WFU-vK-VBq" secondAttribute="bottom" id="TCI-fh-pnD"/>
+                            <constraint firstItem="gT2-0d-PQh" firstAttribute="leading" secondItem="Ws6-Qe-79Q" secondAttribute="leading" id="VfM-kc-3in"/>
                             <constraint firstItem="Qzr-NS-n9n" firstAttribute="leading" secondItem="Ws6-Qe-79Q" secondAttribute="leading" constant="30" id="WVb-ax-0sW"/>
+                            <constraint firstItem="Ws6-Qe-79Q" firstAttribute="bottom" secondItem="gT2-0d-PQh" secondAttribute="bottom" id="fbV-fw-D26"/>
                             <constraint firstItem="WFU-vK-VBq" firstAttribute="leading" secondItem="Ws6-Qe-79Q" secondAttribute="leading" id="isV-Xc-mA0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ws6-Qe-79Q"/>
@@ -349,6 +357,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soi-g0-is3">
                                                         <rect key="frame" x="235" y="22" width="40" height="22"/>
                                                         <state key="normal" image="openbtn"/>
+                                                        <connections>
+                                                            <action selector="doorOpenBtn:" destination="KVI-fT-tHf" eventType="touchUpInside" id="gvP-6U-fpm"/>
+                                                        </connections>
                                                     </button>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleimg" translatesAutoresizingMaskIntoConstraints="NO" id="Pto-qb-h5b">
                                                         <rect key="frame" x="18" y="56" width="127" height="61"/>
