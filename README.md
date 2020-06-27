@@ -1,9 +1,5 @@
 # Smart Home Service using AWS
 
-스마트 홈이란 집안의 개별적인 기기들을 네트워크로 연동하고 관리해주는 시스템을 말한다.<br>
-작게는 조명부터 시작해 도어록, 보일러, 에어컨을 스마트폰으로 모든 것을 제어할 수 있어 인간의 편의성이 배가 된다.<br>
-우리는 스마트홈 시스템을 AWS IoT, 아두이노를 이용해 구현해보았다
-
 ## Project Structure
 
 <img width="500" alt="스크린샷 2020-05-05 오후 8 11 00" src="https://user-images.githubusercontent.com/38883364/81059987-8dd2bf80-8f0c-11ea-8a40-cbbbc3acc571.png">
